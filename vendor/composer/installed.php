@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'acs/php-mvc-master',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => '0f082022dcc8e9f491a5a1796c70642171ab6e0d',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '0b6bed3992043792b4c10808819a73adbcf61714',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'acs/php-mvc-master' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '0f082022dcc8e9f491a5a1796c70642171ab6e0d',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '0b6bed3992043792b4c10808819a73adbcf61714',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -34,6 +34,15 @@
             'reference' => 'dc5ff11e274a90cc1c743f66c9ad700ce50db9ab',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpoption/phpoption',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'rbdwllr/reallysimplejwt' => array(
+            'pretty_version' => '5.0.0',
+            'version' => '5.0.0.0',
+            'reference' => 'd7e1014ccbfba43420866fd3dc3f18a521883868',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../rbdwllr/reallysimplejwt',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
