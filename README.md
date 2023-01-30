@@ -10,7 +10,7 @@ Upload all the repository files to your host</br>
 
 
 ##### database
-Create a database named "chaos_citadel" and install it's content with the file at the root of the repository.
+Create a database named "chaos_citadel" and import it's content with the file at the root of the repository.
 </br>
 `chaos_citadel.sql` 
 
