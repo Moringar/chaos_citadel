@@ -10,7 +10,12 @@ Upload all the repository files to your host</br>
 
 
 ##### database
-Install the database present at the root of the repo and add a .env file, at the root of the project,  containing the following informations:
+Create a database named "chaos_citadel" and install it's content with the file at the root of the repository.
+</br>
+`chaos_citadel.sql` 
+
+Then, add a .env file, at the root of the project,  containing the following informations:
+</br>
 `DBHOST="host_address"`
 </br>
 `DBUSER="username"`
