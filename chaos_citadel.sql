@@ -78,7 +78,7 @@ CREATE TABLE `user` (
   `id` int NOT NULL,
   `pseudo` varchar(50) NOT NULL,
   `mail` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `current_step` int NOT NULL DEFAULT '0',
   `ability_max` int NOT NULL DEFAULT '0',
   `ability_current` int NOT NULL DEFAULT '0',

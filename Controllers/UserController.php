@@ -10,6 +10,9 @@ class UserController
     public function createUser($pseudo, $mail, $password)
     {
         $user = new User();
+
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        
         $user = $user->createUser($pseudo, $mail, $password);
         return $user;
     }

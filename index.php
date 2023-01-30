@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/authenticate")
         if($user != [])
         {
             // If user password is verified
-            if($user[0]["password"] == $password )
+            if(password_verify($password, $user[0]["password"]) )
             {
                 
                 // Creates and delivers a token
