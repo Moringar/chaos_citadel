@@ -28,6 +28,6 @@ Then, add a .env file, at the root of the project,  containing the following inf
 
 ---
 ### documentation
-The API documentation is available at https://documenter.getpostman.com/view/25228793/2s935hS7c9
+The API documentation is available at https://documenter.getpostman.com/view/25228793/2s935itm3B
 
 
