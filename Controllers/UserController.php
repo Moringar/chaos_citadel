@@ -7,6 +7,7 @@ use App\Models\User;
 class UserController
 {
 
+    // Create a user
     public function createUser($pseudo, $mail, $password)
     {
         $user = new User();

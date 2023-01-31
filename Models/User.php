@@ -6,27 +6,25 @@ use App\Models\Database;
 
 class User
 {
-    // Creates a new user in the user table
+
+
     public function createUser($pseudo, $mail, $password)
     {
         Database::prepReq('INSERT INTO user (pseudo, mail, password ) VALUES (:pseudo, :mail, :password)', ["pseudo" => $pseudo, "mail" => $mail, "password" => $password]);
         return Database::fetchData();
     }
 
-    //Creates a new inventory for a unser
     public function createUserInventory($id)
     {
         Database::prepReq('INSERT INTO inventory (id_user) VALUES (:id)', ["id" => $id]);
         return Database::fetchData();
     }
 
-    // Creates a new formula_inventory for the user
     public function createUserFormula($id)
     {
         Database::prepReq('INSERT INTO formula (id_user) VALUES (:id)', ["id" => $id]);
         return Database::fetchData();
     }
-
 
     public function deleteUser($id)
     {
@@ -45,31 +43,25 @@ class User
     }
 
 
-
-
-
-    // Returns the user informations from the user table, by it's name.
     public function getUserByName($pseudo)
     {
         Database::prepReq('SELECT * FROM user WHERE pseudo = :pseudo', ["pseudo" => $pseudo]);
         return Database::fetchData();
     }
 
-    // Returns the user information from the user table, by it's id
     public function getUserById($id)
     {
         Database::prepReq('SELECT * FROM user WHERE id = :id', ["id" => $id]);
         return Database::fetchData();
     }
 
-    // Returns a user formula by it's id
+
     public function getFormulaByUserId($id)
     {
         Database::prepReq('SELECT * FROM formula WHERE id_user = :id', ["id" => $id]);
         return Database::fetchData();
     }
 
-    //Returns a user inventory by it's id
     public function getInventoryByUserId($id)
     {
         Database::prepReq('SELECT * FROM inventory WHERE id_user = :id', ["id" => $id]);
@@ -187,7 +179,6 @@ class User
         return Database::fetchData();
     }
     
-
     public function setUserStepByUserId($step, $id)
     {
 
@@ -203,8 +194,5 @@ class User
 
         return Database::fetchData();
     }
-
-
-
 
 }
