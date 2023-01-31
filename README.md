@@ -25,6 +25,8 @@ Then, add a .env file, at the root of the project,  containing the following inf
 `DBNAME="database_name"`
 </br>
 `SECRET="secret_key"`
+</br>
+The `SECRET` is used to generate Json Web Tokens.
 
 ---
 ### documentation
