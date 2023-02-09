@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/create" and $_SERVER["REQUEST_METHOD"] == 
         if($user != [])
         {
             echo json_encode(["message" => "User already exists"]);
+            http_response_code(400);
         }
         // Else, creates the user with it's associated inventory and formula
         else
@@ -67,6 +68,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/create" and $_SERVER["REQUEST_METHOD"] == 
     else
     {
         echo json_encode(["message" => "must provide credentials"]);
+        http_response_code(400);
     } 
 }
 
@@ -117,12 +119,14 @@ if ($_SERVER['REQUEST_URI'] == "/user/authenticate" and $_SERVER["REQUEST_METHOD
         else
         {
             echo json_encode(["message" => "Invalid username or password"]);
+            http_response_code(401);
         }
     }
     // else, credentials are not provided
     else
     {
         echo json_encode(["message" => "Must provide credentials"]);
+        http_response_code(400);
     }
 }
 
@@ -160,12 +164,14 @@ if ($_SERVER['REQUEST_URI'] == "/user/delete" and $_SERVER["REQUEST_METHOD"] == 
         else
         {
             echo json_encode(["message" => "INVALID TOKEN"]);
+            http_response_code(401);
         }
     }
     // Else, token is missing from the body of the request
     else
     {
         echo json_encode(["message" => "MUST PROVIDE TOKEN"]);
+        http_response_code(400);
     }
     
 }
@@ -207,12 +213,14 @@ if ($_SERVER['REQUEST_URI'] == "/user/get_info" and $_SERVER["REQUEST_METHOD"] =
         else
         {
             echo json_encode(["message" => "Invalid token"]);
+            http_response_code(401);
         }
     }
     // else, the token is missing
     else
     {
         echo json_encode(["message" => "Must provide token"]);
+        http_response_code(400);
     }
     
 }
@@ -251,12 +259,14 @@ if ($_SERVER['REQUEST_URI'] == "/user/get_formula" and $_SERVER["REQUEST_METHOD"
         else
         {
             echo json_encode(["message" => "INVALID TOKEN"]);
+            http_response_code(401);
         }
     }
     // else, the token is missing
     else
     {
         echo json_encode(["message" => "MUST PROVIDE TOKEN"]);
+        http_response_code(400);
     }
     
 }
@@ -295,12 +305,14 @@ if ($_SERVER['REQUEST_URI'] == "/user/get_inventory" and $_SERVER["REQUEST_METHO
         else
         {
             echo json_encode(["message" => "Invalid token"]);
+            http_response_code(401);
         }
     }
     // else, the token is not provided
     else
     {
         echo json_encode(["message" => "Must provide token"]);
+        http_response_code(400);
     }
     
 }
@@ -367,12 +379,14 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_inventory" and $_SERVER["REQUEST_METHO
         // else, the token is invalid
         {
             echo json_encode(["message" => "Invalid token"]);
+            http_response_code(401);
         }
     }
     // else, data about the inventory and or token are missing
     else
     {
         echo json_encode(["message" => "Must provide token and inventory data"]);
+        http_response_code(400);
     }
 }
 
@@ -437,12 +451,14 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_formula" and $_SERVER["REQUEST_METHOD"
         else
         {
             echo json_encode(["message" => "Invalid token"]);
+            http_response_code(401);
         }
     }
     // else, data about the formulas and or token are missing
     else
     {
         echo json_encode(["message" => "Must provide token and formulas data"]);
+        http_response_code(400);
     }
 }
 
@@ -500,12 +516,14 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_characteristics")
         else
         {
             echo json_encode(["message" => "Invalid token"]);
+            http_response_code(401);
         }
     }
     // else, data about the user and or token are missing
     else
     {
         echo json_encode(["message" => "Must provide token and user data"]);
+        http_response_code(400);
     }
 }
 
@@ -547,12 +565,14 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_step" and $_SERVER["REQUEST_METHOD"] =
         else
         {
             echo json_encode(["message" => "Invalid token"]);
+            http_response_code(401);
         }
     }
     // else, data about the uset step and or token are missing
     else
     {
         echo json_encode(["message" => "Must provide token and step data"]);
+        http_response_code(400);
     }
 }
 
