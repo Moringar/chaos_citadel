@@ -207,6 +207,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/get_info" and $_SERVER["REQUEST_METHOD"] =
             $user = new UserController();
             $user = $user->getUserById($user_id);
 
+            // If the token is valid BUT, the user doesn't exist anymore, return an error response.
             if($user == [])
             {
                 echo json_encode(["message" => "User doesn't exists"]);
@@ -263,6 +264,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/get_formula" and $_SERVER["REQUEST_METHOD"
             $user = new UserController();
             $user = $user->getFormulaByUserId($user_id);
 
+            // If the token is valid BUT, the user doesn't exist anymore, return an error response.
             if($user == [])
             {
                 echo json_encode(["message" => "User doesn't exists"]);
@@ -318,6 +320,8 @@ if ($_SERVER['REQUEST_URI'] == "/user/get_inventory" and $_SERVER["REQUEST_METHO
 
             $user = new UserController();
             $user = $user->getInventoryByUserId($user_id);
+
+            // If the token is valid BUT, the user doesn't exist anymore, return an error response.
             if($user == [])
             {
                 echo json_encode(["message" => "User doesn't exists"]);
