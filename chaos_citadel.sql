@@ -42,7 +42,7 @@ CREATE TABLE `formula` (
   `formula_gold` int NOT NULL DEFAULT '0',
   `formula_protection` int NOT NULL DEFAULT '0',
   `formula_telepathy` int DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,7 @@ CREATE TABLE `inventory` (
   `gold` int NOT NULL DEFAULT '0',
   `enchanted_amulet` int NOT NULL DEFAULT '0',
   `copper_key` int NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -88,7 +88,7 @@ CREATE TABLE `user` (
   `chance_current` int NOT NULL DEFAULT '0',
   `magic_max` int NOT NULL DEFAULT '0',
   `magic_current` int NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Index pour les tables déchargées
