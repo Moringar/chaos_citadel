@@ -144,11 +144,11 @@ if ($_SERVER['REQUEST_URI'] == "/user/delete" and $_SERVER["REQUEST_METHOD"] == 
     $_HEADER = getallheaders();
 
     // If the token is provided
-    if( isset($_HEADER["Authorization"]))
+    if( isset($_HEADER["Authentication"]))
     {
         // Gets the token from the body of the request and the secret key from the env file.
         // Checks if the token is valid.
-        $token = $_HEADER["Authorization"];
+        $token = $_HEADER["Authentication"];
         $token_secret = $secret;
         $result = Token::validate($token, $token_secret);
 
@@ -194,11 +194,11 @@ if ($_SERVER['REQUEST_URI'] == "/user/get_info" and $_SERVER["REQUEST_METHOD"] =
     $_HEADER = getallheaders();
 
     // If the token is present in the body of the request
-    if( isset($_HEADER["Authorization"]))
+    if( isset($_HEADER["Authentication"]))
     {
         // Gets the token from the body of the request and the secret key from the env file.
         // Checks if the token is valid.
-        $token = $_HEADER["Authorization"];
+        $token = $_HEADER["Authentication"];
         $token_secret = $secret;
 
         $result = Token::validate($token, $token_secret);
@@ -254,11 +254,11 @@ if ($_SERVER['REQUEST_URI'] == "/user/get_formula" and $_SERVER["REQUEST_METHOD"
     $_HEADER = getallheaders();
 
     // If the token is present in the body of the request
-    if( $_HEADER["Authorization"])
+    if( $_HEADER["Authentication"])
     {
         // Gets the token from the body of the request and the secret key from the env file.
         // Checks if the token is valid.
-        $token = $_HEADER["Authorization"];
+        $token = $_HEADER["Authentication"];
         $token_secret = $secret;
 
         $result = Token::validate($token, $token_secret);
@@ -314,11 +314,11 @@ if ($_SERVER['REQUEST_URI'] == "/user/get_inventory" and $_SERVER["REQUEST_METHO
     $_HEADER = getallheaders();
 
     // If the token is present in the body of the request
-    if( isset($_HEADER["Authorization"]))
+    if( isset($_HEADER["Authentication"]))
     {
         // Gets the token from the body of the request and the secret key from the env file.
         // Checks if the token is valid.
-        $token = $_HEADER["Authorization"];
+        $token = $_HEADER["Authentication"];
         $token_secret = $secret;
 
         $result = Token::validate($token, $token_secret);
@@ -374,7 +374,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_inventory" and $_SERVER["REQUEST_METHO
 
     
     // If the token and the needed data to set the inventory are provided
-    if( isset($_HEADER["Authorization"]) and
+    if( isset($_HEADER["Authentication"]) and
     isset($_BODY["myriad"]) and
     isset($_BODY["spider_jar"]) and
     isset($_BODY["berry"]) and
@@ -407,7 +407,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_inventory" and $_SERVER["REQUEST_METHO
 
         // Gets the token from the body of the request and the secret key from the env file.
         // Checks if the token is valid.
-        $token = $_HEADER["Authorization"];
+        $token = $_HEADER["Authentication"];
         $token_secret = $secret;
         $result = Token::validate($token, $token_secret);
 
@@ -450,7 +450,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_formula" and $_SERVER["REQUEST_METHOD"
     $_HEADER = getallheaders();
 
      // If the token and the needed data to set the formula are provided
-    if( isset($_HEADER["Authorization"]) and
+    if( isset($_HEADER["Authentication"]) and
     isset($_BODY["formula_luck"]) and
     isset($_BODY["formula_copy"]) and
     isset($_BODY["formula_life"]) and
@@ -481,7 +481,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_formula" and $_SERVER["REQUEST_METHOD"
 
         // Gets the token from the body of the request and the secret key from the env file.
         // Checks if the token is valid.
-        $token = $_HEADER["Authorization"];
+        $token = $_HEADER["Authentication"];
 
         $token_secret = $secret;
         $result = Token::validate($token, $token_secret);
@@ -525,7 +525,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_characteristics")
     $_HEADER = getallheaders();
 
     // If the token and the needed data to set the user characteristics are provided
-    if( isset($_HEADER["Authorization"]) and
+    if( isset($_HEADER["Authentication"]) and
     isset($_BODY["ability_max"]) and
     isset($_BODY["ability_current"]) and
     isset($_BODY["life_max"]) and
@@ -548,7 +548,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_characteristics")
 
         // Gets the token from the body of the request and the secret key from the env file.
         // Checks if the token is valid.
-        $token = $_HEADER["Authorization"];
+        $token = $_HEADER["Authentication"];
 
         $token_secret = $secret;
         $result = Token::validate($token, $token_secret);
@@ -593,7 +593,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_step" and $_SERVER["REQUEST_METHOD"] =
     $_HEADER = getallheaders();
 
     // If the token and the needed data to set the user step are provided
-    if( isset($_HEADER["Authorization"]) and
+    if( isset($_HEADER["Authentication"]) and
     isset($_BODY["step"])
     )
     {
@@ -602,7 +602,7 @@ if ($_SERVER['REQUEST_URI'] == "/user/set_step" and $_SERVER["REQUEST_METHOD"] =
 
         // Gets the token from the body of the request and the secret key from the env file.
         // Checks if the token is valid.
-        $token = $_HEADER["Authorization"];
+        $token = $_HEADER["Authentication"];
 
         $token_secret = $secret;
         $result = Token::validate($token, $token_secret);
